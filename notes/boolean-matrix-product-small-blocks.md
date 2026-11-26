@@ -6,7 +6,7 @@ $$
 Y_{ij}=(A_{i0}\land B_{0j})\lor(A_{i1}\land B_{1j})\lor(A_{i2}\land B_{2j}).
 $$
 
-The six off-diagonal outputs jointly require **30 two-input gates**. The direct construction attains 30 with 18 ANDs and 12 ORs. The lower bound counts gates even if intermediate wires can feed any number of later gates. In particular an nine-output implementation with one NOT and size at most 44 must contain **at least four two-input AND/OR gates whose results reach multiple outputs**.
+The six off-diagonal outputs jointly require **30 two-input gates**. The direct construction attains 30 with 18 ANDs and 12 ORs. The lower bound counts gates even if intermediate wires can feed any number of later gates. In particular a nine-output implementation with one NOT and size at most 44 must contain **at least four two-input AND/OR gates whose results reach multiple outputs**.
 
 The Lean proof in [BooleanMatrixProduct.lean](../lean/PEqualNP/Contributions/BooleanMatrixProduct.lean) establishes the six-output bound on the project's gate-list interpreter. The theorem `six_output_bound` counts only two-input gates on paths to the six selected taps. The theorem `physical_gate_bound` expresses the bound using gate positions in the original list. Run `lake build PEqualNP.Contributions.BooleanMatrixProduct` from `lean/`.
 
